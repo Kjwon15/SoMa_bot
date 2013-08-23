@@ -78,6 +78,11 @@ public class TweetParser implements Observer {
 
 			// Get information
 			if (answer == null) {
+				answer = Answer.getInfo(text);
+			}
+
+			// Nothing found, just hello
+			if (answer == null) {
 				if (userlog.containsKey(id) == false || userlog.get(id) != date) {
 
 					if (random.nextInt(100) < HELLO_RATE) {
@@ -95,14 +100,6 @@ public class TweetParser implements Observer {
 				}
 			}
 
-			// Nothing found, just hello
-
-			if (answer == null) {
-				if (userlog.containsKey(id) == false || userlog.get(id) != date) {
-					answer = "Hello";
-					System.out.println("Say hello to @" + user.getScreenName());
-				}
-			}
 
 			if (answer != null) {
 				tw.replyTo(status, answer);
