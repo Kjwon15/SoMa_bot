@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Random;
 
 import twitter4j.Status;
 import twitter4j.User;
@@ -11,10 +12,13 @@ import twitter4j.User;
 public class TweetParser implements Observer {
 
 	// Constant Percents
+	private static int HELLO_RATE = 70;
 
 	private TwitterWrapper tw;
 	// Contains user's id, date
 	private HashMap<Long, Integer> userlog;
+
+	private static Random random = new Random();
 
 	public TweetParser() {
 		tw = TwitterWrapper.getInstance();
@@ -68,15 +72,26 @@ public class TweetParser implements Observer {
 			String answer = null;
 			String text = status.getText();
 
+			int hour = calendar.get(Calendar.HOUR_OF_DAY);
 			int date = calendar.get(Calendar.DATE);
 			long id = status.getUser().getId();
 
 			// Get information
 			if (answer == null) {
-				try {
-					answer = Answer.getInformation(text);
-				} catch (Exception e) {
-					answer = null;
+				if (userlog.containsKey(id) == false || userlog.get(id) != date) {
+
+					if (random.nextInt(100) < HELLO_RATE) {
+						if (0 <= hour && hour < 5) {
+							answer = Answer.getHelloDawn(text);
+						} else if (hour < 18) {
+							answer = Answer.getHelloDaytime(text);
+						} else if (hour <= 24) {
+							answer = Answer.getHelloNight(text);
+						}
+
+						System.out.println("Say hello to @"
+								+ user.getScreenName());
+					}
 				}
 			}
 
