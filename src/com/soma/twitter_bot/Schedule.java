@@ -55,7 +55,9 @@ public class Schedule {
 					"집에 가고싶어요..ㅠㅠ",
 					"SW_Maestro_ 지원 절차는 다음과 같습니다. http://swmaestro.kr/homepage/default/page/subLocation.do?menu_no=20010301&up_menu_no=200103",
 					"SW_Maestro_ 는 총 3단계의 인증과정을 통해 SW 인재를 양성하는 프로그램입니다.",
-					"SW_Maestro_ 홈페이지는 http://swmaestro.kr/ 이곳입니다.", };
+					"SW_Maestro_ 홈페이지는 http://swmaestro.kr/ 이곳입니다.",
+					"멘토님들의 정보는 정보는 여기서 확인하실 수 있습니다. http://swmaestro.kr/homepage/default/page/subLocation.do?menu_no=20010201&up_menu_no=200102",
+					"멘티들의 정보는 여기서 확인하실 수 있습니다. http://swmaestro.kr/homepage/default/page/subLocation.do?menu_no=20010202&up_menu_no=200102"};
 			tw.tweet(choice(autoTweets));
 		}
 	}
