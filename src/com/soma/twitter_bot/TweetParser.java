@@ -32,7 +32,7 @@ public class TweetParser implements Observer {
 			// Twitter user name can contains a-zA-z0-9_
 			// It is \\w
 			String text = status.getText().replaceFirst("^@\\w+\\s*", "");
-			System.err.println("Mention: @" + status.getUser().getScreenName()
+			System.out.println("Mention: @" + status.getUser().getScreenName()
 					+ " - " + text);
 			String answer = Answer.getAnswer(user, text);
 			tw.replyTo(status, answer);
@@ -41,7 +41,7 @@ public class TweetParser implements Observer {
 				.contains("@" + tw.getScreenName().toLowerCase())) {
 			// Some tweet mentioned me
 			String text = status.getText();
-			System.err.println(String.format("@%s mentioned me - %s", status
+			System.out.println(String.format("@%s mentioned me - %s", status
 					.getUser().getScreenName(), text));
 			String answer = Answer.getAnswer(user,
 					text.replaceAll("@\\S\\s?", ""));
@@ -51,18 +51,18 @@ public class TweetParser implements Observer {
 			System.err.println("My Tweet: " + status.getText());
 		} else if (status.getText().startsWith("@")) {
 			// Mention to another user
-			System.err.println("Others msg: @"
+			System.out.println("Others msg: @"
 					+ status.getUser().getScreenName() + " - "
 					+ status.getText());
 		} else if (status.isRetweet() == true) {
 			// User retweeted some tweet
-			System.err.println(String.format("@%s RT @%s - %s", status
+			System.out.println(String.format("@%s RT @%s - %s", status
 					.getUser().getScreenName(), status.getRetweetedStatus()
 					.getUser().getScreenName(), status.getRetweetedStatus()
 					.getText()));
 		} else {
 			// Just users tweet
-			System.err.println("@" + status.getUser().getScreenName() + " - "
+			System.out.println("@" + status.getUser().getScreenName() + " - "
 					+ status.getText());
 
 			String answer = null;

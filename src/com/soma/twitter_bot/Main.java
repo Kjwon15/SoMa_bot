@@ -11,6 +11,14 @@ public class Main {
 		TwitterWrapper tw = TwitterWrapper.getInstance();
 		tw.Login(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
 
+		CustomListener listener = new CustomListener();
+		TweetParser parser = new TweetParser();
+
+		listener.addObserver(parser);
+		tw.setMentionListener(listener);
+		
+		tw.followAll();
+
 		System.out.println(tw.getScreenName());
 	}
 

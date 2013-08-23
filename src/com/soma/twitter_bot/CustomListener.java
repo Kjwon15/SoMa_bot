@@ -50,9 +50,9 @@ public class CustomListener extends Observable implements UserStreamListener {
 			//Someone follows me
 			try {
 				tw.follow(from);
-				System.err.println("Following @" + from.getScreenName());
+				System.out.println("Following @" + from.getScreenName());
 			} catch (TwitterException e) {
-				System.err.println("Following @"+from.getScreenName() + " failed: " + e.getMessage());
+				System.out.println("Following @"+from.getScreenName() + " failed: " + e.getMessage());
 			}
 		}
 	}
@@ -65,12 +65,12 @@ public class CustomListener extends Observable implements UserStreamListener {
 
 	@Override
 	public void onStallWarning(StallWarning warning) {
-		System.err.println(String.format("Stall warning: %s", warning.getMessage()));
+		System.out.println(String.format("Stall warning: %s", warning.getMessage()));
 	}
 
 	@Override
 	public void onTrackLimitationNotice(int arg0) {
-		System.err.println(String.format("Limit Notice: %d", arg0));
+		System.out.println(String.format("Limit Notice: %d", arg0));
 	}
 
 	@Override
