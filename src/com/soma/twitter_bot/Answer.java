@@ -47,7 +47,7 @@ public class Answer {
 		if (msg.contains("위치") || msg.contains("장소")) {
 			res = "서울특별시 강남구 테헤란로 311(역삼동) 아남타워 2층, 또는 7층";
 		} else if (msg.contains("번호")) {
-			res = "전화번호가 02-6933-0701~0705";
+			res = "02-6933-0701~0705";
 		}
 
 		String answer = null;
