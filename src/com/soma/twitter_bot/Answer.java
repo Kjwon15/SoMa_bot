@@ -59,7 +59,7 @@ public class Answer {
 		return answer;
 	}
 
-	private static String getFood(String msg) {
+	public static String getFood(String msg) {
 		String[] foods = { "햄버거 먹어", "푸드코트 가", "짜장면 먹어", "초밥같은거 먹을래?", "족발",
 				"치킨!", "피자!", "분식", "고기고기!", "스파게티", "안먹고 살 빼는게 어떨까?", "먹지마", };
 
