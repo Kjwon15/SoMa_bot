@@ -18,6 +18,7 @@ public class Main {
 		tw.setMentionListener(listener);
 		
 		tw.followAll();
+		Schedule.SetSchedule();
 
 		System.out.println(tw.getScreenName());
 	}

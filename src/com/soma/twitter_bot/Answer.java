@@ -38,7 +38,7 @@ public class Answer {
 		return answer;
 	}
 
-	private static String getInfo(String msg) {
+	static public String getInfo(String msg) {
 		String[] headers = { "알아봤더니", "알아보니까", "찾아봤더니" };
 		String[] footers = { "이렇게 나왔어!", "라고 하는데", "대충 이래" };
 
