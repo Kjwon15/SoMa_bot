@@ -8,7 +8,9 @@ public class Main {
 	private static final String ACCESS_TOKEN_SECRET = "2UgjA4HsobDapBlWQbj4EmzvQiYSVqIMysAdQJ4E";
 
 	public static void main(String[] args) {
-		TwitterWrapper tw = new TwitterWrapper(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
+		TwitterWrapper tw = TwitterWrapper.getInstance();
+		tw.Login(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
+
 		System.out.println(tw.getScreenName());
 	}
 
