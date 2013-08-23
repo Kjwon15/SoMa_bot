@@ -44,10 +44,6 @@ public class Answer {
 		{
 			res = Choice(foods);
 		}
-		else if(false)
-		{
-			
-		}
 		
 		String answer = String.format("%s %s %s",Choice(headers), res, Choice(footers));
 		return answer;
