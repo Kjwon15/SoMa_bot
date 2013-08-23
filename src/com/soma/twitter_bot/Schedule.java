@@ -17,6 +17,8 @@ public class Schedule {
 	public static void SetSchedule() {
 		// First sleep 30 min. and every 6 hour
 		TimerTask jobAutoTeet = new ScheduledAutoTweet();
+		TimerTask jobBreakfast = new ScheduledFoodTime();
+		TimerTask jobLunch = new ScheduledFoodTime();
 		TimerTask jobDinner = new ScheduledFoodTime();
 		scheduler.scheduleAtFixedRate(jobAutoTeet, 30 * MINUTE, 30 * MINUTE);
 
@@ -27,11 +29,11 @@ public class Schedule {
 		firstTime.set(Calendar.MILLISECOND, 0);
 
 		//breakfast.
-		scheduler.scheduleAtFixedRate(jobDinner, firstTime.getTime(), 24 * HOUR);
+		scheduler.scheduleAtFixedRate(jobBreakfast, firstTime.getTime(), 24 * HOUR);
 		
 		//Lunch.
 		firstTime.set(Calendar.HOUR_OF_DAY, 12);
-		scheduler.scheduleAtFixedRate(jobDinner, firstTime.getTime(), 24 * HOUR);
+		scheduler.scheduleAtFixedRate(jobLunch, firstTime.getTime(), 24 * HOUR);
 		
 		//Dinner.
 		firstTime.set(Calendar.HOUR_OF_DAY, 18);
