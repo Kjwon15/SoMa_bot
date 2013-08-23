@@ -16,7 +16,7 @@ public class Schedule {
 	public static void SetSchedule() {
 		// First sleep 30 min. and every 6 hour
 		TimerTask jobPlace = new ScheduledAutoTweet();
-		scheduler.scheduleAtFixedRate(jobPlace, 30 * MINUTE, 2 * HOUR);
+		scheduler.scheduleAtFixedRate(jobPlace, 30 * MINUTE, 30 * MINUTE);
 	}
 
 	public static void CancleSchedule() {
