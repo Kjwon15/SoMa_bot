@@ -48,7 +48,7 @@ public class TweetParser implements Observer {
 			tw.replyTo(status, answer);
 		} else if (status.getUser().getId() == tw.getID()) {
 			// My tweet
-			System.err.println("My Tweet: " + status.getText());
+			System.out.println("My Tweet: " + status.getText());
 		} else if (status.getText().startsWith("@")) {
 			// Mention to another user
 			System.out.println("Others msg: @"
